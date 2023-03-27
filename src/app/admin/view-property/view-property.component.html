@@ -1,0 +1,174 @@
+<h1>Form view table</h1>
+
+<table class="table table-success" border="1">
+  <thead>
+    <tr>
+      <th scope="col">Property Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Category</th>
+      <th scope="col">Bedrooms</th>
+      <th scope="col">Bathrooms</th>
+      <th scope="col">Size </th>
+      <th scope="col">Action </th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let v of list">
+    <tr>
+      <td>{{v.name}}</td>
+      <td>{{v.description}}</td>
+      <td>{{v.price}}</td>
+      <td>{{v.category}}</td>
+      <td>{{v.bedrooms}}</td>
+      <td>{{v.bathrooms}}</td>
+      <td>{{v.size}}</td>
+      <td>
+        <button type="submit"(click)="update(v, f)" style=" margin-right: 10px; background-color: green; color: #fff;">Edit</button>
+        <button type="submit" (click)="delete(v.id)" style="background-color: red; color: #fff;">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- form -->
+
+
+<div id="main" class="main">
+  <div class="container w-50 border mt-5" id="form">
+    <form class="mt-5" (ngSubmit)="submit(f)" #f="ngForm">
+      <div class="mb-3">
+        <label for="UrunAdi" class="form-label">Property Name</label>
+        <input
+          ngModel
+          name="name"
+          type="text"
+          class="form-control"
+          id="UrunAdi"
+          required
+        />
+      </div>
+ <input type="hidden" ngModel name="id">
+      
+      <div class="mb-3">
+          <label for="UrunID" class="form-label">Description</label>
+          <input
+            ngModel
+            name="description"
+            type="text"
+            class="form-control"
+            id="UrunID"
+            required
+          />
+        </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Price</label>
+        <input
+          ngModel
+          name="price"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
+
+     
+      <div class="mb-3">
+        <label for="Kategori" class="form-label">Category</label>
+        <select
+          ngModel
+          name="category"
+          id="Kategori"
+          class="ms-1 d-block w-100"
+          required
+        >
+          <option value="For Sale">For Sale</option>
+          <option value="For Rent">For Rent</option>
+          <option value="For Buy">For Buy</option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Bedrooms</label>
+        <input
+          ngModel
+          name="bedrooms"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
+        <div class="mb-3">
+        <label for="UrunID" class="form-label">Bathrooms</label>
+        <input
+          ngModel
+          name="bathrooms"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Size (sq ft)</label>
+        <input
+          ngModel
+          name="size"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
+      
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image1</label>
+        <input
+          ngModel
+          name="productImage_1"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image2</label>
+        <input
+          ngModel
+          name="productImage_2"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image3</label>
+        <input
+          ngModel
+          name="productImage_3"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-success text-white btn-outline-success form-control w-50 m-3"
+          id="ekleButton"
+        >
+          Update Property
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

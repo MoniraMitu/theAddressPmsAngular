@@ -1,0 +1,40 @@
+<div class="container" *ngFor="let i of allProperty" style="margin-top: 70px;">
+  
+    <div class="box">
+      <div class="top">
+        <img src="{{i.productImage_1}}" alt="" />
+        <span
+          ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+        ></span>
+      </div>
+      <div class="bottom">
+        <h3>{{i.name}}</h3>
+        <p>
+         {{i.description}}
+        </p>
+        <div class="advants">
+          <div>
+            <span>Bedrooms</span>
+            <div><i class="fas fa-th-large"></i><span>{{i.bedrooms}}</span></div>
+          </div>
+          <div>
+            <span>Bathrooms</span>
+            <div><i class="fas fa-shower"></i><span>{{i.bathrooms}}</span></div>
+          </div>
+          <div>
+            <span>Area</span>
+            <div>
+              <i class="fas fa-vector-square"></i
+              ><span>{{i.size}}<span>Sq Ft</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <span>{{i.category}}</span>
+          <span>{{i.price}} Tk</span>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

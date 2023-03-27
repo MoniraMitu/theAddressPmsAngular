@@ -1,0 +1,227 @@
+
+
+<div style="margin-top: 100px;"></div>
+
+    
+<!-- slider -->
+<!-- <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
+<div id="slider">
+<figure>
+<img src="austin-fireworks.jpg" alt>
+<img src="taj-mahal_copy.jpg" alt>
+<img src="ibiza.jpg" alt>
+<img src="ankor-wat.jpg" alt>
+<img src="austin-fireworks.jpg" alt>
+</figure>
+</div> -->
+
+<base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
+<div id="slider">
+<figure>
+<img src="https://s3images.zee5.com/wp-content/uploads/2021/08/individual-houses-villas.jpg" alt="">
+<img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0W48ACObaKPnVcCzBDYBIwfvLNP9ZTL12JQ&usqp=CAU" alt>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeq6ZWWHtmbdvDXftoscfQy9CXH2TNjdkRw&usqp=CAU" alt>
+<img src="https://images.moneycontrol.com/static-mcnews/2017/05/real-estate-Luxury-home.jpg?impolicy=website&width=770&height=431" alt>
+</figure>
+</div>
+
+
+  <div class="container">
+    <form>
+      <select name="city">
+        <option value="city" selected hidden>City</option>
+       
+        <option value="Dhaka">Dhaka</option>
+        <option value="Chittagong">Chittagong</option>
+        <option value="Sylhet">Sylhet</option>
+        
+      </select>
+      <select name="categ">
+        <option value="category" selected hidden>Category</option>
+        <option value="For Sale">For Sale</option>
+        <option value="For Rent">For Rent</option>
+        <option value="For Buy">For Buy</option>
+      </select>
+      <select name="type">
+        <option value="type" selected hidden>Type</option>
+        <option value="Flat">Flat</option>
+        <option value="Building">Building</option>
+        <option value="Land">Land</option>
+        
+      </select>
+      <div class="price">
+        <span>tk</span>
+        <input type="number" placeholder=" price" />
+      </div>
+      <!-- <div class="price">
+        <span>$</span>
+        <input type="number" placeholder="Max price" />
+      </div> -->
+      <button type="submit">Search</button>
+    </form>
+    <div class="content">
+      <h3>find your dream</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Quo, sapiente?
+      </p>
+    </div>
+  </div>
+<!-- banner -->
+
+
+
+<!-- dynamically added -->
+<div class="container" *ngFor="let i of allProperty">
+  
+  <div class="box" routerLink="/bookingForm">
+    <div class="top">
+      <img src="{{i.productImage_1}}" alt="" />
+      <span
+        ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+      ></span>
+    </div>
+    <div class="bottom">
+      <h3>{{i.name}}</h3>
+      <p>
+       {{i.description}}
+      </p>
+      <div class="advants">
+        <div>
+          <span>Bedrooms</span>
+          <div><i class="fas fa-th-large"></i><span>{{i.bedrooms}}</span></div>
+        </div>
+        <div>
+          <span>Bathrooms</span>
+          <div><i class="fas fa-shower"></i><span>{{i.bathrooms}}</span></div>
+        </div>
+        <div>
+          <span>Area</span>
+          <div>
+            <i class="fas fa-vector-square"></i
+            ><span>{{i.size}}<span>Sq Ft</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="price">
+        <span>{{i.category}}</span>
+        <span>{{i.price}} Tk</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- jjjj -->
+<div class="container">
+  <div class="box">
+    <div class="top">
+      <img src="https://cdn.pixabay.com/photo/2014/07/10/17/18/large-home-389271__340.jpg" alt="" />
+      <span
+        ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+      ></span>
+    </div>
+    <div class="bottom">
+      <h3>Home Heaven</h3>
+      <p>
+        Enchanting three bedrooms, three bath home with spacious one
+        bedroom, one bath...
+      </p>
+      <div class="advants">
+        <div>
+          <span>Bedrooms</span>
+          <div><i class="fas fa-th-large"></i><span>3</span></div>
+        </div>
+        <div>
+          <span>Bathrooms</span>
+          <div><i class="fas fa-shower"></i><span>3</span></div>
+        </div>
+        <div>
+          <span>Area</span>
+          <div>
+            <i class="fas fa-vector-square"></i
+            ><span>4300<span>Sq Ft</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="price">
+        <span>For Sale</span>
+        <span>540,000 tk</span>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="top">
+      <img src="https://cdn.pixabay.com/photo/2014/07/31/00/30/vw-beetle-405876__340.jpg" alt="" />
+      <span
+        ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+      ></span>
+    </div>
+    <div class="bottom">
+      <h3>Villa In Narayangonj</h3>
+      <p>
+        Enjoy serenity of Deering Bay whole day from this spectacular North
+        and...
+      </p>
+      <div class="advants">
+        <div>
+          <span>Bedrooms</span>
+          <div><i class="fas fa-th-large"></i><span>3</span></div>
+        </div>
+        <div>
+          <span>Bathrooms</span>
+          <div><i class="fas fa-shower"></i><span>3.5</span></div>
+        </div>
+        <div>
+          <span>Area</span>
+          <div>
+            <i class="fas fa-vector-square"></i
+            ><span>3500<span>Sq Ft</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="price">
+        <span>For Sale</span>
+        <span>825,000 tk</span>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="top">
+      <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070__340.jpg" alt="" />
+      <span
+        ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+      ></span>
+    </div>
+    <div class="bottom">
+      <h3>JK Tower</h3>
+      <p>
+        The very best waterfront location in Tahrir square and beside many
+        cool places
+      </p>
+      <div class="advants">
+        <div>
+          <span>Bedrooms</span>
+          <div><i class="fas fa-th-large"></i><span>3</span></div>
+        </div>
+        <div>
+          <span>Bathrooms</span>
+          <div><i class="fas fa-shower"></i><span>2</span></div>
+        </div>
+        <div>
+          <span>Area</span>
+          <div>
+            <i class="fas fa-vector-square"></i
+            ><span>1800<span>Sq Ft</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="price">
+        <span>For Sale</span>
+        <span>410,000 tk</span>
+      </div>
+    </div>
+  </div>
+</div>
