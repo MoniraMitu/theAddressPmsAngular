@@ -7,6 +7,7 @@
       <th scope="col">Description</th>
       <th scope="col">Price</th>
       <th scope="col">Category</th>
+      <th scope="col">Type</th>
       <th scope="col">Bedrooms</th>
       <th scope="col">Bathrooms</th>
       <th scope="col">Size </th>
@@ -20,6 +21,7 @@
       <td>{{v.description}}</td>
       <td>{{v.price}}</td>
       <td>{{v.category}}</td>
+      <td>{{v.type}}</td>
       <td>{{v.bedrooms}}</td>
       <td>{{v.bathrooms}}</td>
       <td>{{v.size}}</td>
@@ -84,9 +86,23 @@
           class="ms-1 d-block w-100"
           required
         >
-          <option value="For Sale">For Sale</option>
+          <option value="For Sell">For Sell</option>
           <option value="For Rent">For Rent</option>
-          <option value="For Buy">For Buy</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="Kategori" class="form-label">Type</label>
+        <select
+          ngModel
+          name="type"
+          id="Kategori"
+          class="ms-1 d-block w-100"
+          required
+        >
+          <option value="Flat">Flat</option>
+          <option value="Building">Building</option>
+          <!-- <option value="For Buy">For Buy</option> -->
         </select>
       </div>
       
@@ -127,10 +143,10 @@
      
       
       <div class="mb-3">
-        <label for="UrunImage" class="form-label">Product Image1</label>
+        <label for="UrunImage" class="form-label">Image 1</label>
         <input
           ngModel
-          name="productImage_1"
+          name="image1"
           type="text"
           class="form-control"
           id="UrunImage"
@@ -138,10 +154,10 @@
         />
       </div>
       <div class="mb-3">
-        <label for="UrunImage" class="form-label">Product Image2</label>
+        <label for="UrunImage" class="form-label">Image 2</label>
         <input
           ngModel
-          name="productImage_2"
+          name="image2"
           type="text"
           class="form-control"
           id="UrunImage"
@@ -149,10 +165,10 @@
         />
       </div>
       <div class="mb-3">
-        <label for="UrunImage" class="form-label">Product Image3</label>
+        <label for="UrunImage" class="form-label">Image 3</label>
         <input
           ngModel
-          name="productImage_3"
+          name="image3"
           type="text"
           class="form-control"
           id="UrunImage"

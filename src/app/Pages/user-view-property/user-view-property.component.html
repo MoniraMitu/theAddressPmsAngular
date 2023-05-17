@@ -1,0 +1,38 @@
+<div style="margin-top: 200px;"></div>
+<div class="product-card">
+    <div class="image-container">
+      <div class="cover-image product-image">
+        <img src="{{ productIndividual.image1 }}" alt="" />
+      </div>
+      <div class="more-image-container">
+        <div class="more-image product-image ii jj">
+          <img src="{{ productIndividual.image2 }}" alt="" />
+        </div>
+        <div class="more-image product-image ii">
+          <img src="{{ productIndividual.image3}}" alt="" />
+        </div>
+       
+    </div>
+    <div class="product-info">
+      <!-- <a href="#" class="free-shipping">Free shipping</a> -->
+      <h3 class="product-name">{{ productIndividual.name }}</h3>
+      <p class="offer-info">{{ productIndividual.address }}</p>
+      <p class="offer-info">{{ productIndividual.area }}</p>
+      <p class="offer-info">{{ productIndividual.description }}</p>
+      <p class="discount-price">{{ productIndividual.price }} TK</p>
+      
+    
+      <div class="sss">
+        <a
+        (click)="redirectToBuyPage()"
+       
+        style="cursor: pointer"
+      >
+      <button style="width: 100px; height: 30px;"  (click)=" productClickedForBuy(productIndividual.id)" type="button" class="btn btn-info"><span *ngIf="productIndividual.category =='For Sell'">Buy Now</span> <span *ngIf="productIndividual.category =='For Rent'">Rent Now</span></button>
+      </a>
+      </div>
+      
+     
+    </div>
+  </div>
+  <div style="margin-top: 100px;"></div>

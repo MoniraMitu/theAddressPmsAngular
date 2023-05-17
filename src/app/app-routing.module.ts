@@ -15,6 +15,12 @@ import { LoginComponent } from './Pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
+import { UserViewPropertyComponent } from './Pages/user-view-property/user-view-property.component';
+import { UserDetailsComponent } from './Pages/user-details/user-details.component';
+import { UserAddedPropertyComponent } from './Pages/user-added-property/user-added-property.component';
+import { ApprovePropertiesComponent } from './admin/approve-properties/approve-properties.component';
+
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -23,12 +29,16 @@ const routes: Routes = [
   {path:'signUp',component:SignUpComponent},
   {path:'productItem',component:ProductItemComponent},
   {path:'home/contactPage',component:ContactPageComponent},
+  {path:'home/userDetails/:id',component:UserDetailsComponent},
   {path:'admin',component: AdminLoginComponent},
-  {path:'admin/dashbord',component: AdminComponent},
+  {path:'admin/dashboard',component: AdminComponent},
   {path:'admin/addProperty',component: AddPropertyComponent},
   {path:'admin/viewProperty',component: ViewPropertyComponent},
-  {path:'bookingForm',component:BookingFormComponent},
+  {path:'bookingForm/property/:id',component:BookingFormComponent},
+   {path:'userViewProperty/:id',component:UserViewPropertyComponent},
   {path:'admin/bookedList',component:BookedListComponent},
+  {path:'userAddedProperty',component:UserAddedPropertyComponent},
+  {path:'admin/approveProperties',component:ApprovePropertiesComponent},
   
 ];
 

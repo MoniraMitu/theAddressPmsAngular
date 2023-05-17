@@ -59,7 +59,10 @@ ngOnInit(): void {
            name: edit.name,
            address:edit.address,
            gender:edit.gender,
-           contact:edit.contact,
+          contactNumber:edit.contactNumber,
+          //  propertyId:edit.propertyId,
+          //  propertyName:edit.propertyName,
+          //  propertyPrice:edit.propertyPrice,
           })
           this.ngOnInit()
           }

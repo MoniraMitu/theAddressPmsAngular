@@ -7,11 +7,19 @@ import { Injectable } from '@angular/core';
 export class ServiService {
 
   constructor(private http: HttpClient) { }
-  url = 'http://localhost:3000/Properties';
+  url = 'http://localhost:8080/api/properties';
 
   getAllProperty(){
-  return this.http.get(this.url);
+  return this.http.get(this.url+ '/' +"approved");
   }
+
+  getAllUnApprovedProperty(){
+    return this.http.get(this.url+ '/' +"unApproved");
+    }
+
+  getPropertyById(id:any){
+    return this.http.get(this.url + '/'+id);
+    }
 
   add (adding:any){
     return this.http.post(this.url, adding);
@@ -22,11 +30,13 @@ export class ServiService {
   }
 
   updateProperty(fo:any, id:any){
-    return this.http.put(this.url + "/" + id, fo)
+    console.log('Foooooooooooo',fo);
+    
+    return this.http.put(this.url , fo);
     }
    
 
-uri='http://localhost:3000/Bookings';
+uri='http://localhost:8080/api/bookings/';
 
 getAll(){
   return this.http.get(this.uri);
@@ -41,6 +51,33 @@ getAll(){
   }
 
   update(fo:any, id:any){
-    return this.http.put(this.uri + "/" + id, fo)
+    return this.http.put(this.uri , fo)
     }
+
+    getPropertyBySearch(area: string, category: string, type: string){
+      return this.http.get('http://localhost:8080/api/propertiesBySearch'+ '/'+ area+ '/'+ category + "/" + type);
+    }
+
+
+    urs='http://localhost:8080/api/signUps/';
+
+getAllSignUp(){
+  return this.http.get(this.urs);
+  }
+
+  addingSignUp (addingSignUp:any){
+    return this.http.post(this.urs, addingSignUp);
+   }
+
+   deleteSignUp(id: any){
+    return this.http.delete(this.urs + '/' + id);
+  }
+
+  updateSignUp(fo:any, id:any){
+    return this.http.put(this.urs , fo)
+    }
+
+    getSignUpsById(id:any){
+      return this.http.get(this.urs + '/'+id);
+      }
 }

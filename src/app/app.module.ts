@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { BookedListComponent } from './booked-list/booked-list.component';
+import { UserViewPropertyComponent } from './Pages/user-view-property/user-view-property.component';
+import { UserDetailsComponent } from './Pages/user-details/user-details.component';
+import { UserAddedPropertyComponent } from './Pages/user-added-property/user-added-property.component';
+import { ApprovePropertiesComponent } from './admin/approve-properties/approve-properties.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { BookedListComponent } from './booked-list/booked-list.component';
          FooterComponent,
          BookingFormComponent,
          BookedListComponent,
+         UserViewPropertyComponent,
+         UserDetailsComponent,
+         UserAddedPropertyComponent,
+         ApprovePropertiesComponent,
        
   ],
   imports: [

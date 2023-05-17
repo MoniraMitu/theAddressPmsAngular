@@ -1,40 +1,150 @@
-<div style="margin-top: 100px;" class="ooo">
-<div>
-    
-    <h1>Booking Form</h1>
-    <form (ngSubmit)="Submits(f)"  #f="ngForm" >
-        <div>
-           <input ngModel name="id" type="hidden" > 
+<div style="margin-top: 150px;" class="ooo">
+
+        <div class="for_grid">
+          <div class="for_grid-child">
+            <div class="enter" style="margin-left: -120px; margin-bottom: 0px">
+              <h2>Enter Your Details</h2>
+            </div>
+            <div class="name">
+              <form (ngSubmit)="Submits(f)" #f="ngForm">
+                <p>Name<span class="op">*</span></p>
+                <input
+                  ngModel
+                  name="name"
+                  autofocus
+                  class="input"
+                  type="text"
+                  required
+                />
+                
+                <div>
+                    <span>Gender  : </span>
+                    <label class="form-label"> Male </label>
+                    <input  class="form-check-input" type="radio" value="Male" ngModel name="gender" th:field="*{gender}"/>
+                    <label class="form-label"> Female</label>
+                    <input  class="form-check-input" type="radio" value="Female" ngModel name="gender" th:field="*{gender}"/>
+                </div>
+                <p>Email address<span class="op">*</span></p>
+                <input ngModel name="email" class="input" type="email" />
+                <!-- <p>Phone number<span class="op">*</span></p>
+                <input ngModel name="phone" class="input" type="tel" value="+880" /> -->
+                <div class="requist">
+                  <p> Address: <span id="op">(Required)</span></p>
+                  <!-- <input class="input" id="ok" type="text" /> -->
+                  <textarea
+                    ngModel
+                    name="address"
+                    placeholder="Road No 1, Block G, Rampura Banasree, Dkaka."
+                    id="ok"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
+
+                <input type="hidden"  ngModel
+                name="createdBy">
+
+
+                <p>Contact No<span class="op">*</span></p>
+                <input
+                  ngModel
+                  name="contactNumber"
+                  autofocus
+                  class="input"
+                  type="text"
+                  required
+                />
+                <div class="requist">
+                  <p>Please write your request. <span id="op">(optional)</span></p>
+                  <!-- <input class="input" id="ok" type="text" /> -->
+                  <textarea
+                    ngModel
+                    name="request"
+                    id="ok"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div>
+                  <h3>
+                    Total Amount to Be Paid: <span class="op">*</span>
+                  </h3>
+                 
+                 
+                  <br />
+                 <p>Payment Method</p>
+                  <select  [(ngModel)]="selectedValue" class="input" name="paymentMethod" ngModel id="ik" style="height: 50px;">
+                    <option value="cash">Cash Payment</option>
+                    <option value="bank">Paid by Cheque</option>
+                  </select>
+                </div>
+
+                <br>
+                <br>
+
+                <div *ngIf="selectedValue === 'bank'">
+                  <strong>
+                   If you Want to paid by Cheque kindly fill the followings : <span class="op">*</span>
+                  </strong>
+                  <br>
+                  <br>
+                  <br>
+
+                  <p>Bank Name<span class="op">*</span></p>
+
+                  <br>
+
+                  <input
+                    ngModel
+                    name="bankName"
+                    autofocus
+                    class="input"
+                    type="text"
+                    required
+                  />
+
+                  <br>
+
+
+                  <p>Bank  Branch Name<span class="op">*</span></p>
+                  <input
+                    ngModel
+                    name="bankBranchName"
+                    autofocus
+                    class="input"
+                    type="text"
+                    required
+                  />
+                  
+
+                  <br>
+                  <p>Cheque Number<span class="op">*</span></p>
+                    <input
+                      ngModel
+                      name="checkNumber"
+                      autofocus
+                      class="input"
+                      type="text"
+                      required
+                    />
+                  <br />
+                </div>
+
+              
+
+                <div style="text-align: center;" class="sss">
+                    <a
+                    
+                   
+                    style="cursor: pointer"
+                  >
+                  <button style="width: 100px; height: 30px;"  type="submit" class="btn btn-info"><span *ngIf="property.category === 'For Sell'">Booked</span>  <span *ngIf="property.category === 'For Rent'">Rented</span> </button>
+                  </a>
+                  </div>
+               
+              </form>
+            </div>
+          </div>
         </div>
-        <br>
-        <div>
-            <label for="name">Name</label>
-           <input ngModel name="name" type="text"> 
-        </div>
-        <br>
-        <br>
-        <div>
-            <label for="address">Address</label>
-          <textarea  ngModel  name="address" id="address" cols="30" rows="10"></textarea>
-        </div>
-        <br>
-        <div>
-            Gender:
-            <label for="gender">MALE</label>
-           <input ngModel  name="gender" type="radio" value="Male">
-           <label for="gender">FEMALE</label>
-           <input ngModel  name="gender" type="radio" value="feMale"> 
-        </div>
-        <br>
-        <div>
-            <label for="contact">Contact Number</label>
-           <input ngModel name="contact" type="number"> 
-        </div>
-        <br>
-        <input type="submit" value="Submit">
-        <br>
-        <br>
-        
-    </form>
-    </div>
+     
 </div>

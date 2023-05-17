@@ -1,0 +1,40 @@
+<table class="table table-success" border="1">
+    <thead>
+      <tr>
+        <th scope="col"> Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Contact No</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Property Name</th>
+       
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <!-- <th scope="col">Category</th>
+        <th scope="col">Bedrooms</th>
+        <th scope="col">Bathrooms</th>
+        <th scope="col">Size </th> -->
+        <th scope="col">Action </th>
+  
+      </tr>
+    </thead>
+    <tbody *ngFor="let v of list">
+      <tr>
+        <td>{{v.name}}</td>
+        <td>{{v.address}}</td>
+        <td>{{v.contactNo}}</td>
+        <td>{{v.email}}</td>
+        <td>{{v.propertyName}}</td>
+        <td>{{v.price}}</td>
+        <td>{{v.date}}</td>
+        <!-- <td>{{v.price}}</td>
+        <td>{{v.category}}</td>
+        <td>{{v.bedrooms}}</td>
+        <td>{{v.bathrooms}}</td>
+        <td>{{v.size}}</td> -->
+        <td>
+          <button type="submit"(click)="update(v)" style=" margin-right: 10px; background-color: green; color: #fff;">Edit</button>
+          <button type="submit"  style="background-color: red; color: #fff;">Back</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

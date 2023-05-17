@@ -14,6 +14,8 @@ constructor(private service:ServiService){}
 
 
   submit(user:NgForm){
+    console.log(user.value);
+    
     this.service.updateProperty(user.value, user.value.id).subscribe({
       next: r=>{
         console.log(r);
@@ -65,12 +67,13 @@ constructor(private service:ServiService){}
       description:edit.description,
       price:edit.price,
       category:edit.category,
+     type:edit.type,
       bedrooms:edit.bedrooms,
       bathrooms:edit.bathrooms,
       size: edit.size,
-      productImage_1 : edit.productImage_1,
-      productImage_2 : edit.productImage_2,
-      productImage_3 : edit.productImage_3,
+      image1 : edit. image1,
+      image2 : edit.image2,
+      image3 : edit.image3,
      })
  }
 }
