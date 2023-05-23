@@ -46,17 +46,17 @@ export class BookingFormComponent implements OnInit{
     
 
     this.service.updateProperty(this.property, this.property.id).subscribe({
-       next: n=>{
+       next: (n: any)=>{
         console.log(n);
         
        },
-       error: e=>{
+       error: (e: any)=>{
         console.log(e);
         
        }
     })
 
-    this.service.adding(user.value).subscribe(r=>{console.log(r);
+    this.service.adding(user.value).subscribe((r: any)=>{console.log(r);
       user.reset()
       alert("Property Booked")
     })

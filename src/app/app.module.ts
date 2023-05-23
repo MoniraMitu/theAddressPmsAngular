@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { LoginComponent } from './Pages/login/login.component';
 import { SignUpComponent } from './Pages/sign-up/sign-up.component';
@@ -48,11 +48,13 @@ import { ApprovePropertiesComponent } from './admin/approve-properties/approve-p
        
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+     NgxPaginationModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

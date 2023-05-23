@@ -13,7 +13,11 @@ export class HomeComponent implements OnInit {
     private service: ServiService,
     private router: Router
     ){}
+
+
+  form !:any[];
   allProperty!:any;
+
   selectedArea="area";
   selectedCategory= "category";
   selectedType= "type";
@@ -56,4 +60,21 @@ this.service.getPropertyBySearch(data.value.area, data.value.category, data.valu
   productClicked(id: number){
     this.router.navigate(["/userViewProperty/" + id])
   }
+
+  
+title ='pagination'
+POSTS:any;
+page:number =1;
+count:number =0;
+tableSize:number =5;
+tableSizes:any=[2,10,15,20];
+
+onTableSizechange(event:any){
+  this.page= event;
+   this.allProperty;
+}
+
+pagenUmber(){
+  this.tableSize
+}
 }
