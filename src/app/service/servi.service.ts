@@ -10,8 +10,8 @@ export class ServiService {
   constructor(private http:HttpClient) { }
   url = 'http://localhost:8080/api/properties';
 
-  getAllProperty(){
-  return this.http.get(this.url+ '/' +"approved");
+  getAllProperty(page: any){
+  return this.http.get(this.url+ '/' +"approved?page="+page);
   }
 
   getAllUnApprovedProperty(){
@@ -57,6 +57,11 @@ getAll(){
 
     getPropertyBySearch(area: string, category: string, type: string){
       return this.http.get('http://localhost:8080/api/propertiesBySearch'+ '/'+ area+ '/'+ category + "/" + type);
+    }
+
+
+    getPropertyBySearchByArea(area: string, category: string, type: string){
+      return this.http.get('http://localhost:8080/api/propertiesBySearchByArea'+ '/'+ area);
     }
 
 

@@ -1,4 +1,59 @@
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  text-align: center;
+  animation: rotate 2s infinite linear;
+}
 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #ccc; /* Increase border thickness */
+  border-top-color: blue;
+  animation: spin 1.5s infinite linear;
+}
+
+/* Add a backdrop to blur the page */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity and color as needed */
+  z-index: 9998;
+  backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-bottom-color: blue;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 // jjjj
 * {
@@ -22,10 +77,18 @@
     gap: 10px;
     
   }
+
+  .container > div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+  }
   
   .container > div > .box {
     // width: calc((100% / 3) - 20px);
-    width: 100%;
+    width: 550px;
+    height: 900px;
     
     background-color: white;
     position: relative;
@@ -96,7 +159,8 @@
   }
   
   .container  > div > .box .top img {
-    width: 100%;
+    width: 550px;
+    height: 500px;
     margin-bottom: -4px;
   }
   

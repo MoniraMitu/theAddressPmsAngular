@@ -15,8 +15,13 @@
                   class="input"
                   type="text"
                   required
+                  #name="ngModel"
                 />
-                
+                <div style="color: red;" *ngIf="!name.valid && name.touched" class="error-message">
+                  Name Field is Empty. 
+                </div>
+                <br>
+               
                 <div>
                     <span>Gender  : </span>
                     <label class="form-label"> Male </label>
@@ -24,8 +29,18 @@
                     <label class="form-label"> Female</label>
                     <input  class="form-check-input" type="radio" value="Female" ngModel name="gender" th:field="*{gender}"/>
                 </div>
+                <br>
                 <p>Email address<span class="op">*</span></p>
-                <input ngModel name="email" class="input" type="email" />
+                <input ngModel 
+                required
+                email
+                #email="ngModel"
+                 name="email" class="input" type="email" />
+
+                 <div style="color: red;" *ngIf="!email.valid && email.touched" class="error-message">
+                  Email address is not valid.
+                </div>
+
                 <!-- <p>Phone number<span class="op">*</span></p>
                 <input ngModel name="phone" class="input" type="tel" value="+880" /> -->
                 <div class="requist">
@@ -38,7 +53,12 @@
                     id="ok"
                     cols="30"
                     rows="5"
+                    required
+                    #address="ngModel"
                   ></textarea>
+                  <div style="color: red;" *ngIf="!address.valid && address.touched" class="error-message">
+                    Address Field is Empty. 
+                  </div>
                 </div>
 
                 <input type="hidden"  ngModel
@@ -53,7 +73,12 @@
                   class="input"
                   type="text"
                   required
+                  #contact="ngModel"
+
                 />
+                <div style="color: red;" *ngIf="!contact.valid && contact.touched" class="error-message">
+                 Contact number isn't provided. 
+                </div>
                 <div class="requist">
                   <p>Please write your request. <span id="op">(optional)</span></p>
                   <!-- <input class="input" id="ok" type="text" /> -->
@@ -138,7 +163,7 @@
                    
                     style="cursor: pointer"
                   >
-                  <button style="width: 100px; height: 30px;"  type="submit" class="btn btn-info"><span *ngIf="property.category === 'For Sell'">Booked</span>  <span *ngIf="property.category === 'For Rent'">Rented</span> </button>
+                  <button [disabled]="!f.valid" style="width: 100px; height: 30px;"  type="submit" class="btn btn-info"><span *ngIf="property.category === 'For Sell'">Booked</span>  <span *ngIf="property.category === 'For Rent'">Rented</span> </button>
                   </a>
                   </div>
                

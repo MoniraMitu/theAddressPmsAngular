@@ -11,7 +11,7 @@ export class ProductItemComponent implements OnInit{
   allProperty!:any;
 
   ngOnInit(){
-     this.service.getAllProperty().subscribe({
+     this.service.getAllProperty(null).subscribe({
       next: r=>{
         console.log(r);
         this.allProperty = r;

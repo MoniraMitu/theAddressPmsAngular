@@ -3,7 +3,10 @@
 <div style="margin-top: 100px;"></div>
 
     
-
+<div id="preLoading">
+  <div class="backdrop"></div>
+<div class="spinner"></div>
+</div>
 
 <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
 <div id="slider">
@@ -64,11 +67,11 @@
 
 
 <!-- dynamically added -->
-<div class="container" >
-  <div *ngFor="let i of allProperty">
+<div class="container row" >
+  <div class="col" *ngFor="let i of allProperty">
   <div class="box" (click)="  productClicked(i.id)">
     <div class="top">
-      <img src="{{i.image1}}" alt="" />
+      <img  src="{{i.image1}}" alt="" />
       <span
         ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
       ></span>
@@ -116,13 +119,13 @@
 </div>
 <div style="float: left;">
   <label for="">Show
-    <select name="" id="" [(ngModel)]="tableSize" (change)="pagenUmber()">
+    <select [(ngModel)]="tableSize" (change)="pagenUmber()">
       <option value="2">2</option>
       <!-- <option value="10">10</option>
       <option value="20">20</option> -->
       <option value="">All</option>
     </select>
-    entries
+    <!-- entries -->
   </label>
 </div>
 
