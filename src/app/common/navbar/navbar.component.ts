@@ -18,16 +18,25 @@ export class NavbarComponent implements OnInit{
 
   Submits(d:NgForm){
  console.log(d.value.Search);
- 
+ this.router.navigate(['/propertiesBySearchByArea/' + d.value.Search]);
   }
+  user!:any;
+  id!:any;
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.user=this.authService.getUser();
+  this.id=JSON.parse(this.user).id;
   }
   LogOutUser(){
     sessionStorage.removeItem(this.authService.USER_KEY);
     alert('You Have Logged Out: ');
+    this.router.navigate(["/home"]);
   }
-  goToUrPropile(){
-  this.router.navigate(["/home/userDetails/dd"])
+  goToUrProfile(){
+
+    if(this.user === null ) alert("LogIn First")
+    else{
+      this.router.navigate(["/home/userDetails/"+this.id])
+    }
+ 
   }
 }

@@ -19,6 +19,7 @@ import { UserViewPropertyComponent } from './Pages/user-view-property/user-view-
 import { UserDetailsComponent } from './Pages/user-details/user-details.component';
 import { UserAddedPropertyComponent } from './Pages/user-added-property/user-added-property.component';
 import { ApprovePropertiesComponent } from './admin/approve-properties/approve-properties.component';
+import { SearchByAreaComponent } from './commom/navbar/search-by-area/search-by-area.component';
 
 
 
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path:'admin/bookedList',component:BookedListComponent},
   {path:'userAddedProperty',component:UserAddedPropertyComponent},
   {path:'admin/approveProperties',component:ApprovePropertiesComponent},
-  
+  { path: 'propertiesBySearchByArea/:word', component:SearchByAreaComponent},
 ];
 
 @NgModule({

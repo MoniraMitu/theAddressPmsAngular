@@ -24,6 +24,7 @@ import { UserViewPropertyComponent } from './Pages/user-view-property/user-view-
 import { UserDetailsComponent } from './Pages/user-details/user-details.component';
 import { UserAddedPropertyComponent } from './Pages/user-added-property/user-added-property.component';
 import { ApprovePropertiesComponent } from './admin/approve-properties/approve-properties.component';
+import { SearchByAreaComponent } from './commom/navbar/search-by-area/search-by-area.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ApprovePropertiesComponent } from './admin/approve-properties/approve-p
          UserDetailsComponent,
          UserAddedPropertyComponent,
          ApprovePropertiesComponent,
+         SearchByAreaComponent,
        
   ],
   imports: [

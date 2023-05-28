@@ -1,0 +1,48 @@
+<!-- dynamically added -->
+<div class="container row" style="margin-top: 150px;">
+    <div class="col" *ngFor="let i of searchedProperty">
+    <div class="box" (click)="  productClicked(i.id)">
+      <div class="top">
+        <img  src="{{i.image1}}" alt="" />
+        <span
+          ><i class="fas fa-heart"></i><i class="fas fa-exchange-alt"></i
+        ></span>
+      </div>
+      <div class="bottom">
+        <h3>{{i.name}}</h3>
+        <h4>{{i.address}}</h4>
+        <h4>{{i.area}}</h4>
+        <p>
+         {{i.description}}
+        </p>
+        <p>
+         {{i.address}}
+        </p>
+        <div class="advants">
+          <div>
+            <span>Bedrooms</span>
+            <div><i class="fas fa-th-large"></i><span>{{i.bedrooms}}</span></div>
+          </div>
+          <div>
+            <span>Bathrooms</span>
+            <div><i class="fas fa-shower"></i><span>{{i.bathrooms}}</span></div>
+          </div>
+          <div>
+            <span>Size</span>
+            <div>
+              <i class="fas fa-vector-square"></i
+              ><span>{{i.size}}<span>Sq Ft</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <span>{{i.category}}</span>
+          <span>{{i.price}} Tk</span>
+        </div>
+      </div>
+  
+    
+    </div>
+  
+  </div>
+  </div>

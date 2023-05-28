@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, assertPlatform } from '@angular/core';
 import{NgForm} from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/service/auth-service.service';
@@ -9,6 +9,7 @@ import { ServiService } from 'src/app/service/servi.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+[x: string]: any;
 
 constructor(
   private service: ServiService,
@@ -18,42 +19,55 @@ constructor(
 
 
 
+
 allUser!: any;
-  ngOnInit(): void {
-    this.service.getAllSignUp().subscribe({
-      next: (r) => {
-        this.allUser = r;
-      },
-      error: (err) => {
-        alert(err);
-      },
-    });
-  }
+ngOnInit(): void {
+  this.service.getAllSignUp().subscribe({
+    next: (r) => {
+      this.allUser = r;
+    },
+    error: (err) => {
+      alert(err);
+    },
+  });
+}
 
-  formSubmit(data: NgForm) {
-    console.log(data.value);
-    console.log(this.allUser);
+message:string = "";
 
-    let foundUser = this.allUser.find((e: any) => {
-      return e.name === data.value.name && e.password === data.value.password;
-    });
+formSubmit(data: NgForm) {
+  console.log(data.value);
+  console.log(this.allUser);
 
-    if (foundUser) {
+  let foundUser = this.allUser.find((e: any) => {
+    return e.name === data.value.name && e.password === data.value.password;
+  });
+
+
+  if (foundUser) {
     this.authService.saveUser(foundUser);
-      alert('Welcome Back ' + data.value.name + ' ! ❤️');
-      this.router.navigate(['/home']);
-    } else {
-      alert('User Name Or Password Is InCorrect..');
-    }
-  
+
+    this.message = "Welcome Back ' + data.value.name + ' ! ❤️"
+    alert("Logged In Done ")
+
+    this.router.navigate(['/home']);
+
+  } else {
+    this.message = 'User Name Or Password Is InCorrect..'
+    alert( 'User Name Or Password Is InCorrect..')
+  }
+}
 
 
+showMessageFlag: boolean = false;
 
-  // submits(user:NgForm){
-  //   console.log(user.value);
-    
-  // }
-
+public  closeMessage() {
+  this.showMessageFlag = false;
+}
+public showMessage() {
+  this.showMessageFlag = true;
+  setTimeout(() => {
+    this.showMessageFlag = false;
+  }, 3000);
 }
 }
 

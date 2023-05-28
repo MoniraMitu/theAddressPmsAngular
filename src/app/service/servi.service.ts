@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ServiService {
+  [x: string]: any;
 
   constructor(private http:HttpClient) { }
   url = 'http://localhost:8080/api/properties';
@@ -60,7 +61,7 @@ getAll(){
     }
 
 
-    getPropertyBySearchByArea(area: string, category: string, type: string){
+    getPropertyBySearchByArea(area: string){
       return this.http.get('http://localhost:8080/api/propertiesBySearchByArea'+ '/'+ area);
     }
 
@@ -84,6 +85,6 @@ getAllSignUp(){
     }
 
     getSignUpsById(id:any){
-      return this.http.get(this.urs + '/'+id);
+      return this.http.get(this.urs + id);
       }
 }
