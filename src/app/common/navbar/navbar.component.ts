@@ -23,8 +23,11 @@ export class NavbarComponent implements OnInit{
   user!:any;
   id!:any;
   ngOnInit(): void {
-    this.user=this.authService.getUser();
-  this.id=JSON.parse(this.user).id;
+    
+   
+
+  // console.log( this.id=JSON.parse(this.user).id);
+  
   }
   LogOutUser(){
     sessionStorage.removeItem(this.authService.USER_KEY);
@@ -32,8 +35,15 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(["/home"]);
   }
   goToUrProfile(){
+    this.user=this.authService.getUser();
+  this.id=this.authService.getUseriid();
 
-    if(this.user === null ) alert("LogIn First")
+   console.log(this.authService.getUseriid() + "dklfdslkfsdjfk");
+
+    if(this.user === null ){
+      alert("LogIn First")
+      this.router.navigate(["/login"])
+    } 
     else{
       this.router.navigate(["/home/userDetails/"+this.id])
     }

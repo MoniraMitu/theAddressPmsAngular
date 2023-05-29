@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/service/auth-service.service';
 import { ServiService } from 'src/app/service/servi.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class  UserViewPropertyComponent implements OnInit {
     private service:ServiService,
     private route: ActivatedRoute,
     private router: Router,
+    private authservice:AuthServiceService,
    
   ) {}
 
@@ -31,8 +33,9 @@ export class  UserViewPropertyComponent implements OnInit {
       },
     });
   }
-
+  user!:any;
   redirectToBuyPage() {
+    this.user=this.authservice.getUseriid();
     if (this.loggedIn === null) {
       alert('Login Or Create an Account First');
       this.router.navigate(['/login']);
@@ -42,6 +45,14 @@ export class  UserViewPropertyComponent implements OnInit {
   }
 
   productClickedForBuy(id: number){
-    this.router.navigate(["/bookingForm/property/" + id])
+    this.user=this.authservice.getUseriid();
+    if(this.user===null){
+      alert('Login Or Create an Account First');
+      this.router.navigate(['/login']);
+    }
+    else{
+      this.router.navigate(["/bookingForm/property/" + id])
+    }
+    
   }
 }

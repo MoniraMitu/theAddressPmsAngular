@@ -41,13 +41,15 @@ formSubmit(data: NgForm) {
   let foundUser = this.allUser.find((e: any) => {
     return e.name === data.value.name && e.password === data.value.password;
   });
-
+  
 
   if (foundUser) {
     this.authService.saveUser(foundUser);
 
     this.message = "Welcome Back ' + data.value.name + ' ! ❤️"
     alert("Logged In Done ")
+    
+   
 
     this.router.navigate(['/home']);
 
