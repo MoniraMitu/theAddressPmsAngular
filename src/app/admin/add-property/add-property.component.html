@@ -1,171 +1,178 @@
 <div id="main" class="main">
-    <div class="container w-50 border mt-5" id="form">
-      <form class="mt-5" (ngSubmit)="submit(f)" #f="ngForm">
-        <div class="mb-3">
-          <label for="UrunAdi" class="form-label">Property Name</label>
-          <input
-            ngModel
-            name="name"
-            type="text"
-            class="form-control"
-            id="UrunAdi"
-            required
-          />
-        </div>
+  <div class="container w-50 border mt-5" id="form">
+    <form class="mt-5" (ngSubmit)="submit(f)" #f="ngForm">
+      <div class="mb-3">
+        <label for="UrunAdi" class="form-label">Property Name</label>
+        <input
+          ngModel
+          name="name"
+          type="text"
+          class="form-control"
+          id="UrunAdi"
+          required
+        />
+      </div>
 
-        
-        <div class="mb-3">
-            <label for="UrunID" class="form-label">Description</label>
-            <input
-              ngModel
-              name="description"
-              type="text"
-              class="form-control"
-              id="UrunID"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="UrunAdi" class="form-label">Property Address</label>
-           <textarea   class="form-control"  ngModel
-           name="address" id="" cols="30" rows="10"></textarea>
-          </div>
-        <div class="mb-3">
-          <label for="UrunID" class="form-label">Price</label>
+      
+      <div class="mb-3">
+          <label for="UrunID" class="form-label">Description</label>
           <input
             ngModel
-            name="price"
+            name="description"
             type="text"
             class="form-control"
             id="UrunID"
             required
           />
         </div>
-       
-  
-       
         <div class="mb-3">
-          <label for="Kategori" class="form-label">Category</label>
-          <select
-            ngModel
-            name="category"
-            id="Kategori"
-            class="ms-1 d-block w-100"
-            required
-          >
-            <option value="For Sell">For Sell</option>
-            <option value="For Rent">For Rent</option>
-            <!-- <option value="For Buy">For Buy</option> -->
-          </select>
+          <label for="UrunAdi" class="form-label">Property Address</label>
+         <textarea   class="form-control"  ngModel
+         name="address" id="" cols="30" rows="10"></textarea>
         </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Price</label>
+        <input
+          ngModel
+          name="price"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
+      <input
+      ngModel
+      name="userId"
+      type="hidden"
+      class="form-control"
+      id="UrunID"
+      required
+    />
+     
+      <div class="mb-3">
+        <label for="Kategori" class="form-label">Category</label>
+        <select
+          ngModel
+          name="category"
+          id="Kategori"
+          class="ms-1 d-block w-100"
+          required
+        >
+          <option value="For Sell">For Sell</option>
+          <option value="For Rent">For Rent</option>
+          <!-- <option value="For Buy">For Buy</option> -->
+        </select>
+      </div>
 
-        <div class="mb-3">
-          <label for="Kategori" class="form-label">Type</label>
-          <select
-            ngModel
-            name="type"
-            id="Kategori"
-            class="ms-1 d-block w-100"
-            required
-          >
-            <option value="Flat">Flat</option>
-            <option value="Building">Building</option>
-            <!-- <option value="For Buy">For Buy</option> -->
-          </select>
-        </div>
+      <div class="mb-3">
+        <label for="Kategori" class="form-label">Type</label>
+        <select
+          ngModel
+          name="type"
+          id="Kategori"
+          class="ms-1 d-block w-100"
+          required
+        >
+          <option value="Flat">Flat</option>
+          <option value="Building">Building</option>
+          <!-- <option value="For Buy">For Buy</option> -->
+        </select>
+      </div>
 
+      <div class="mb-3">
+        <label for="UrunAdi" class="form-label">Property Area</label>
+        <input
+          ngModel
+          name="area"
+          type="text"
+          class="form-control"
+          id="UrunAdi"
+          required
+        />
+      </div>
+      
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Bedrooms</label>
+        <input
+          ngModel
+          name="bedrooms"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
         <div class="mb-3">
-          <label for="UrunAdi" class="form-label">Property Area</label>
-          <input
-            ngModel
-            name="area"
-            type="text"
-            class="form-control"
-            id="UrunAdi"
-            required
-          />
-        </div>
-        
-        <div class="mb-3">
-          <label for="UrunID" class="form-label">Bedrooms</label>
-          <input
-            ngModel
-            name="bedrooms"
-            type="number"
-            class="form-control"
-            id="UrunID"
-            required
-          />
-        </div>
-       
-          <div class="mb-3">
-          <label for="UrunID" class="form-label">Bathrooms</label>
-          <input
-            ngModel
-            name="bathrooms"
-            type="number"
-            class="form-control"
-            id="UrunID"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <label for="UrunID" class="form-label">Size (sq ft)</label>
-          <input
-            ngModel
-            name="size"
-            type="number"
-            class="form-control"
-            id="UrunID"
-            required
-          />
-        </div>
-       
-        
-        <div class="mb-3">
-          <label for="UrunImage" class="form-label">Product Image1</label>
-          <input
-            ngModel
-            name="image1"
-            type="text"
-            class="form-control"
-            id="UrunImage"
-            placeholder="Paste Product Image Url: ex= https://example"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="UrunImage" class="form-label">Product Image2</label>
-          <input
-            ngModel
-            name="image2"
-            type="text"
-            class="form-control"
-            id="UrunImage"
-            placeholder="Paste Product Image Url: ex= https://example"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="UrunImage" class="form-label">Product Image3</label>
-          <input
-            ngModel
-            name="image3"
-            type="text"
-            class="form-control"
-            id="UrunImage"
-            placeholder="Paste Product Image Url: ex= https://example"
-          />
-        </div>
-        <input ngModel name="approval" type="hidden">
-        <input ngModel name="active" type="hidden">
-        <div class="d-flex justify-content-center">
-          <button
-            type="submit"
-            class="btn btn-success text-white btn-outline-success form-control w-50 m-3"
-            id="ekleButton"
-          >
-            Add Property
-          </button>
-        </div>
-      </form>
-    </div>
+        <label for="UrunID" class="form-label">Bathrooms</label>
+        <input
+          ngModel
+          name="bathrooms"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Size (sq ft)</label>
+        <input
+          ngModel
+          name="size"
+          type="number"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+     
+      
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image1</label>
+        <input
+          ngModel
+          name="image1"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image2</label>
+        <input
+          ngModel
+          name="image2"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image3</label>
+        <input
+          ngModel
+          name="image3"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <input ngModel name="approval" type="hidden">
+      <input ngModel name="active" type="hidden">
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-success text-white btn-outline-success form-control w-50 m-3"
+          id="ekleButton"
+        >
+          Add Property
+        </button>
+      </div>
+    </form>
   </div>
+</div>

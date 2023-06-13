@@ -13,6 +13,7 @@ constructor(private service: ServiService){}
 submit(user: NgForm){
   user.value.approval = true;
   user.value.active = true;
+  user.value.userId = 1;
    console.log(user.value);
    this.service.add(user.value).subscribe(r=>{});
 alert("Properties added");
