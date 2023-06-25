@@ -44,6 +44,7 @@ console.log(data.value);
 this.service.getPropertyBySearch(data.value.area, data.value.category, data.value.type).subscribe({
   next: r=>{
     console.log(r);
+    
     this.allProperty = r;
     
     
@@ -58,13 +59,10 @@ this.service.getPropertyBySearch(data.value.area, data.value.category, data.valu
 
 
   ngOnInit(){
-     this.service.getAllProperty(2).subscribe({
+     this.service.getAllProperty().subscribe({
       next: r=>{
         console.log(r);
-        this.allProperty = r;
-
-
-        
+        this.allProperty = r; 
       },
       error: err=>{
         console.log(err);
@@ -80,15 +78,15 @@ this.service.getPropertyBySearch(data.value.area, data.value.category, data.valu
 
 
 onTableSizechange(event:any){
-  this.page= event;
-   this.allProperty;
+  // this.page= event;
+  //  this.allProperty;
 }
 
 pagenUmber(){
   
   console.log(this.tableSize);
   
-  this.service.getAllProperty( this.tableSize ).subscribe({
+  this.service.getAllProperty().subscribe({
     next: r=>{
       console.log(r);
       this.allProperty = r;

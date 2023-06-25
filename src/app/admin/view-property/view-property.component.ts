@@ -29,7 +29,7 @@ constructor(private service:ServiService){}
     this.ngOnInit();
   }
  ngOnInit(): void {
-      this.service.getAllProperty(null).subscribe({
+      this.service.getAllProperty().subscribe({
         next: r=>{
           this.list = r;
         },

@@ -12,9 +12,14 @@ export class ServiService {
   // url = 'http://localhost:8080/api/properties';
   url = 'https://theaddresspmsrestapispring-production.up.railway.app/api/properties'
 
-  getAllProperty(page: any){
-  return this.http.get(this.url+ '/' +"approved?page="+page);
-  }
+  // getAllProperty(page: any){
+  // return this.http.get(this.url+ '/' +"approved?page="+page);
+  // }
+
+  getAllProperty(){
+    return this.http.get("https://theaddresspmsrestapispring-production.up.railway.app/api/properties/approved");
+    }
+  
 
   getAllUnApprovedProperty(){
     return this.http.get(this.url+ '/' +"unApproved");
