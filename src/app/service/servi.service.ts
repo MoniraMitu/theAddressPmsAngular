@@ -76,7 +76,7 @@ getAll(){
 
     // urs='http://localhost:8080/api/signUps/';
 
-    urs = 'https://theaddresspmsrestapispring-production.up.railway.app/api/signUp'
+    urs = 'https://theaddresspmsrestapispring-production.up.railway.app/api/signUps'
 
 getAllSignUp(){
   return this.http.get(this.urs);
